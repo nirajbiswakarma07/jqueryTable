@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Title</title>
+
+	<style>
+	#nestedTable{
+			  border-collapse: collapse;
+		}
+		#nestedTable td{
+			width: 50px;
+			height: 50px;
+			border: solid 1px black;
+			margin: 0;
+			padding: 0;
+		}
+
+	</style>
+	<script	src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+<button id="button">Click me!</button>
+
+<table id=nestedTable></table>
+<!-- <div id="table">
+<table>
+	<tr>
+		
+	<th>
+		Name
+	</th>
+
+	<th>
+		Age
+	</th>
+
+	<th>
+		Number
+	</th>
+
+	</tr>
+</table>
+ -->
+
+<script>
+// function time(){
+var x =[1,2,3,4,5,6,7,8,9]
+// console.log(x);
+// setTimeout(time,500);	
+// }
+
+// time()
+
+var table=document.getElementById("nestedTable");
+var data=[]
+
+for(var i=0;i<3;i++){
+var row=document.createElement("tr");
+$("#nestedTable").append(row);
+	for(var j=0;j<3;j++){
+	var index=Math.floor(Math.random() * x.length);
+	var col=document.createElement("td");
+	col.append(x[index]);
+	x.splice(index, 1);
+
+	row.append(col)
+	}
+}
+	
+	
+
+</script>
+</body>
+</html>
